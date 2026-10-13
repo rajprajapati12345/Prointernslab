@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProInternsLab | Internships with verifiable certificates</title>
+<meta name="description" content="ProInternsLab: hands-on internships in web development, machine learning, data and AI, with mentor feedback and certificates anyone can verify.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --brand:#7C3AED; --brand-text:#7C3AED; --brand-dark:#5B21B6; --yellow:#FBBF24; --yellow-ink:#8a5a00;
+  --bg:#f5f4ff; --surface:#ffffff; --line:#e4e1fa;
+  --ink:#201c33; --muted:#5b5770; --tint:#ede9fe;
+  --header-bg:rgba(255,255,255,.94);
+  --shadow:0 10px 30px rgba(124,58,237,.14);
+  --navy:#1e1b4b; --input-line:#c9c2f0;
+  --hexbg:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2234.64%22%20viewBox%3D%220%200%2060%2034.64%22%3E%0A%3Cg%20fill%3D%22none%22%20stroke%3D%22%237C3AED%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%221%22%3E%0A%3Cpolygon%20points%3D%2240.00%2C17.32%2030.00%2C34.64%2010.00%2C34.64%200.00%2C17.32%2010.00%2C0.00%2030.00%2C0.00%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C0.00%2060.00%2C17.32%2040.00%2C17.32%2030.00%2C0.00%2040.00%2C-17.32%2060.00%2C-17.32%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C34.64%2060.00%2C51.96%2040.00%2C51.96%2030.00%2C34.64%2040.00%2C17.32%2060.00%2C17.32%22%2F%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --brand:#9b6bff; --brand-text:#b79cff; --brand-dark:#4c1d95; --yellow:#fcd34d; --yellow-ink:#4a2e00;
+    --bg:#14102a; --surface:#1e1838; --line:#342b58;
+    --ink:#ece9fb; --muted:#b3a9d6; --tint:#241d46;
+    --header-bg:rgba(20,16,42,.94);
+    --shadow:0 10px 30px rgba(0,0,0,.4);
+    --navy:#0d0a1c; --input-line:#473a73;
+    --hexbg:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2234.64%22%20viewBox%3D%220%200%2060%2034.64%22%3E%0A%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C4B5FD%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%221%22%3E%0A%3Cpolygon%20points%3D%2240.00%2C17.32%2030.00%2C34.64%2010.00%2C34.64%200.00%2C17.32%2010.00%2C0.00%2030.00%2C0.00%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C0.00%2060.00%2C17.32%2040.00%2C17.32%2030.00%2C0.00%2040.00%2C-17.32%2060.00%2C-17.32%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C34.64%2060.00%2C51.96%2040.00%2C51.96%2030.00%2C34.64%2040.00%2C17.32%2060.00%2C17.32%22%2F%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+}
+:root[data-theme="dark"]{
+  --brand:#9b6bff; --brand-text:#b79cff; --brand-dark:#4c1d95; --yellow:#fcd34d; --yellow-ink:#4a2e00;
+  --bg:#14102a; --surface:#1e1838; --line:#342b58;
+  --ink:#ece9fb; --muted:#b3a9d6; --tint:#241d46;
+  --header-bg:rgba(20,16,42,.94);
+  --shadow:0 10px 30px rgba(0,0,0,.4);
+  --navy:#0d0a1c; --input-line:#473a73;
+  --hexbg:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2234.64%22%20viewBox%3D%220%200%2060%2034.64%22%3E%0A%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C4B5FD%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%221%22%3E%0A%3Cpolygon%20points%3D%2240.00%2C17.32%2030.00%2C34.64%2010.00%2C34.64%200.00%2C17.32%2010.00%2C0.00%2030.00%2C0.00%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C0.00%2060.00%2C17.32%2040.00%2C17.32%2030.00%2C0.00%2040.00%2C-17.32%2060.00%2C-17.32%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C34.64%2060.00%2C51.96%2040.00%2C51.96%2030.00%2C34.64%2040.00%2C17.32%2060.00%2C17.32%22%2F%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--bg);scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;font-family:var(--font);font-size:16px;line-height:1.6;color:var(--ink);background-color:var(--bg);background-image:var(--hexbg);background-size:60px 34.64px;background-attachment:fixed;-webkit-font-smoothing:antialiased}
+:root{--hex-on-purple:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2260%22%20height%3D%2234.64%22%20viewBox%3D%220%200%2060%2034.64%22%3E%0A%3Cg%20fill%3D%22none%22%20stroke%3D%22%23FBBF24%22%20stroke-opacity%3D%220.16%22%20stroke-width%3D%221.1%22%3E%0A%3Cpolygon%20points%3D%2240.00%2C17.32%2030.00%2C34.64%2010.00%2C34.64%200.00%2C17.32%2010.00%2C0.00%2030.00%2C0.00%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C0.00%2060.00%2C17.32%2040.00%2C17.32%2030.00%2C0.00%2040.00%2C-17.32%2060.00%2C-17.32%22%2F%3E%0A%3Cpolygon%20points%3D%2270.00%2C34.64%2060.00%2C51.96%2040.00%2C51.96%2030.00%2C34.64%2040.00%2C17.32%2060.00%2C17.32%22%2F%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E");}
+[hidden]{display:none!important}
+a{color:inherit}
+h1,h2,h3{line-height:1.2;margin:0}
+:focus-visible{outline:3px solid #7f9bff;outline-offset:2px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--header-bg);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{position:relative;max-width:1120px;margin:0 auto;height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text b{font-size:1rem;font-weight:800;letter-spacing:-.015em;white-space:nowrap;color:var(--brand-text)}
+.brand-text span{font-size:.62rem;font-weight:600;letter-spacing:.12em;color:var(--muted);margin-top:3px;white-space:nowrap}
+.menu-btn{width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.menu-btn svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.menu-btn .ic-close{display:none}
+.menu-btn[aria-expanded="true"] .ic-open{display:none}
+.menu-btn[aria-expanded="true"] .ic-close{display:block}
+.nav{display:none;position:absolute;top:calc(100% + 8px);right:16px;width:210px;margin:0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.nav.open{display:block}
+.nav a{display:block;padding:10px 14px;border-radius:8px;font-size:.95rem;font-weight:500;text-decoration:none}
+.nav a:hover{background:var(--tint)}
+.nav a[aria-current="true"]{color:var(--brand-text);font-weight:700}
+@media (min-width:900px){
+  .menu-btn{display:none}
+  .nav,.nav.open{display:flex;position:static;width:auto;padding:0;gap:4px;background:none;border:0;box-shadow:none}
+}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 26px;border-radius:999px;border:2px solid transparent;font:inherit;font-size:.95rem;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-light{background:#fff;color:#6d28d9}
+.btn-light:hover{background:#ede9fe}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.65)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-solid{background:var(--brand);color:#fff}
+.btn-solid:hover{filter:brightness(1.12)}
+.btn-outline{color:var(--brand-text);border-color:var(--brand)}
+.btn-outline:hover{background:var(--brand);color:#fff}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:64px 20px 116px;background-color:#5B21B6;background-image:var(--hex-on-purple),linear-gradient(165deg,#8B5CF6 0%,#4C1D95 100%);background-size:60px 34.64px,auto}
+.hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.hero h1{font-size:clamp(2.3rem,9vw,3.8rem);font-weight:800;letter-spacing:-.025em;margin-bottom:14px}
+.hero p{margin:0 auto 30px;max-width:34rem;font-size:1.06rem;color:#dbe3ff}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.orbits{position:absolute;z-index:0;right:-140px;top:-70px;width:620px;height:auto;pointer-events:none}
+.orbits ellipse{fill:none;stroke:#fff;stroke-opacity:.16;stroke-width:1.5}
+.orbits circle{fill:#fff;fill-opacity:.55}
+.hero-short{padding:56px 20px 108px}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1120px;margin:0 auto}
+.section{padding:72px 20px}
+.section-head{max-width:640px;margin:0 auto;text-align:center}
+.section-head.left{margin:0;text-align:left}
+.kicker{display:inline-block;margin-bottom:10px;font-size:.9rem;font-weight:700;color:var(--brand-text)}
+.section h2{font-size:clamp(1.75rem,5.5vw,2.5rem);font-weight:800;letter-spacing:-.02em}
+.lede{margin:14px 0 0;color:var(--muted)}
+
+/* ---------- About ---------- */
+.about{position:relative;margin-top:-68px;padding:0 20px}
+.about-card{max-width:1000px;margin:0 auto;display:grid;gap:28px;padding:30px 24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.tag{display:inline-block;padding:4px 10px;border-radius:5px;background:var(--brand);color:#fff;font-size:.78rem;font-weight:700}
+.about-card h2{margin:16px 0 14px;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:800;letter-spacing:-.02em}
+.about-card p{margin:0 0 14px;color:var(--muted);max-width:34rem}
+.illus{width:100%;max-width:380px;height:auto;justify-self:center}
+.i-panel{fill:var(--surface);stroke:var(--line);stroke-width:2}
+.i-dot{fill:var(--line)}
+.i-line{fill:var(--tint)}
+.i-brand{fill:var(--brand)}
+.i-ring{fill:none;stroke:var(--brand);stroke-width:2.5}
+.i-check{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@media (min-width:860px){
+  .about-card{grid-template-columns:1.1fr .9fr;align-items:center;padding:44px 48px;gap:40px}
+}
+
+/* ---------- Internship cards ---------- */
+.programs{display:grid;gap:20px;grid-template-columns:1fr;margin-top:40px}
+@media (min-width:720px){.programs{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.programs{grid-template-columns:repeat(3,1fr)}}
+.program{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:34px 24px 28px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.program h3{margin-bottom:18px;font-size:1.35rem;font-weight:800;color:var(--brand-text)}
+.program ul{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:10px;font-size:.93rem;color:var(--muted)}
+.program .btn{margin-top:auto}
+.program.corner-green::after,.program.corner-blue::before{content:"";position:absolute;width:46px;height:46px}
+.program.corner-green::after{top:0;right:0;background:var(--yellow);border-bottom-left-radius:46px}
+.program.corner-blue::before{left:0;bottom:0;background:var(--brand);border-top-right-radius:46px;opacity:.9}
+.program.featured{color:#fff;border-color:transparent;background-color:#5B21B6;background-image:var(--hex-on-purple),linear-gradient(160deg,#8B5CF6 0%,#4C1D95 100%);background-size:60px 34.64px,auto}
+.program.featured h3{color:#fff}
+.program.featured ul{color:#ece2ff}
+.badge{margin-bottom:14px;padding:5px 16px;border-radius:999px;background:var(--yellow);color:#4a2e00;font-size:.78rem;font-weight:800}
+
+/* ---------- Features ---------- */
+.features{display:grid;gap:14px;grid-template-columns:1fr;margin-top:36px}
+@media (min-width:640px){.features{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.features{grid-template-columns:repeat(3,1fr)}}
+.feature{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.ico{flex:none;width:48px;height:48px;border-radius:12px;background:var(--brand);display:grid;place-items:center}
+.ico svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feature h3{margin-bottom:4px;font-size:1.05rem;font-weight:700}
+.feature p{margin:0;font-size:.93rem;color:var(--muted)}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px;margin:36px auto 0;display:grid;gap:12px}
+.faq-list details{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.faq-list summary{display:flex;align-items:center;gap:14px;padding:16px 18px;list-style:none;cursor:pointer;font-weight:600}
+.faq-list summary::-webkit-details-marker{display:none}
+.chev{flex:none;width:28px;height:28px;border-radius:8px;background:var(--tint);display:grid;place-items:center;transition:transform .2s}
+.chev svg{width:16px;height:16px;stroke:var(--brand-text);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+details[open] .chev{transform:rotate(180deg)}
+.faq-list details p{margin:0;padding:0 18px 18px 60px;color:var(--muted);font-size:.95rem}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:36px}
+@media (min-width:860px){.contact-grid{grid-template-columns:1fr 1fr;align-items:start;gap:56px}}
+.contact-list{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:22px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start}
+.contact-list .ico{width:40px;height:40px;border-radius:50%}
+.contact-list .ico svg{width:20px;height:20px}
+.contact-list b{display:block;font-size:1rem}
+.contact-list span{color:var(--muted);font-size:.95rem}
+.form-card{padding:28px 24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.form-card h3{margin-bottom:18px;font-size:1.4rem;font-weight:800}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:.78rem;font-weight:600;color:var(--muted)}
+.field input,.field textarea{width:100%;padding:8px 0;border:0;border-bottom:1.5px solid var(--input-line);border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:.98rem}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:.7}
+.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--brand-text)}
+.field textarea{min-height:88px;resize:vertical}
+.form-note{margin:16px 0 0;padding:12px 14px;border-radius:10px;background:var(--tint);color:var(--ink);font-size:.93rem}
+
+/* ---------- Verify ---------- */
+.verify-card{position:relative;max-width:520px;margin:-72px auto 0;padding:28px 24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.verify-pad{padding:0 20px 72px}
+.verify-card h2{margin-bottom:18px;font-size:1.4rem;font-weight:800}
+.hint{margin:14px 0 0;font-size:.85rem;color:var(--muted)}
+.result{margin-top:20px;padding:16px 18px;border-radius:12px;font-size:.95rem}
+.result.ok{background:var(--tint);border:1px solid var(--brand)}
+.result.bad{background:var(--tint);border:1px solid #e5484d}
+.result h3{margin-bottom:10px;font-size:1.05rem}
+.result dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.result dt{color:var(--muted)}
+.result dd{margin:0;font-weight:600}
+
+/* ---------- Footer ---------- */
+.site-footer{position:relative;background-color:var(--navy);background-image:var(--hex-on-purple);background-size:60px 34.64px;color:#c5cde0;padding:56px 20px 28px}
+.foot-grid{max-width:1120px;margin:0 auto;display:grid;gap:34px;grid-template-columns:1fr}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1.3fr}}
+.site-footer .brand-text b{color:#fff}
+.site-footer .brand-text span{color:#9aa6c4}
+.site-footer p{margin:14px 0 0;font-size:.92rem;max-width:24rem}
+.site-footer h4{margin:0 0 14px;font-size:1rem;color:#fff}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.92rem}
+.site-footer a{text-decoration:none}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.foot-legal{max-width:1120px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;font-size:.86rem}
+.foot-legal nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+/* ---------- Back to top ---------- */
+.to-top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:44px;height:44px;border:0;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.to-top.show{opacity:1;visibility:visible}
+.to-top svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="ProInternsLab home">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="pg-h" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#5B21B6"/>
+          </linearGradient>
+        </defs>
+        <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="url(#pg-h)"/>
+        <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="none" stroke="#FBBF24" stroke-width="1.6" opacity=".6"/>
+        <path d="M24 16h11a10 10 0 0 1 0 20h-5v10h-6z M30 21v10h5a5 5 0 0 0 0-10z" fill="#fff"/>
+        <circle cx="46" cy="44" r="7.5" fill="#FBBF24"/>
+        <path d="M46 40.2 47.1 43 50 43.9 47.1 44.9 46 47.8 44.9 44.9 42 43.9 44.9 43z" fill="#5B21B6"/>
+      </svg>
+      <span class="brand-text"><b>ProInternsLab</b><span>INTERNSHIPS</span></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg class="ic-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul class="nav" id="nav">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#internships" data-nav="internships">Internships</a></li>
+      <li><a href="#faqs" data-nav="faqs">FAQs</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+      <li><a href="#verify" data-nav="verify">Verify</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HOME VIEW ================= -->
+<main id="home-view">
+
+  <section class="hero" id="home">
+    <svg class="orbits" viewBox="0 0 620 420" aria-hidden="true">
+      <ellipse cx="310" cy="210" rx="290" ry="110" transform="rotate(-22 310 210)"/>
+      <ellipse cx="310" cy="210" rx="220" ry="82" transform="rotate(-22 310 210)"/>
+      <ellipse cx="310" cy="210" rx="150" ry="56" transform="rotate(-22 310 210)"/>
+      <circle cx="548" cy="120" r="6"/>
+      <circle cx="150" cy="262" r="4"/>
+    </svg>
+    <div class="hero-inner">
+      <h1>ProInternsLab</h1>
+      <p>Learn on real projects, get feedback from mentors, and finish with a certificate anyone can verify.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#internships">Explore internships</a>
+        <a class="btn btn-ghost" href="#verify">Verify a certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-card">
+      <div>
+        <span class="tag">About us</span>
+        <h2>Learning that starts with real work</h2>
+        <p>ProInternsLab connects students and early-career professionals with hands-on internships in software, data and AI. You work through practical tasks, get mentor feedback, and end with a project you can show.</p>
+        <p>Whether you are building your first app or switching fields, our programs are structured, self-paced and built around work that employers can check.</p>
+      </div>
+      <svg class="illus" viewBox="0 0 340 230" role="img" aria-label="Illustration of a task list next to a certificate">
+        <defs>
+          <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#4C1D95"/>
+          </linearGradient>
+        </defs>
+        <rect x="4" y="4" width="232" height="168" rx="12" class="i-panel"/>
+        <circle cx="22" cy="22" r="4" class="i-dot"/><circle cx="36" cy="22" r="4" class="i-dot"/><circle cx="50" cy="22" r="4" class="i-dot"/>
+        <circle cx="30" cy="62" r="10" class="i-brand"/><path d="M25.5 62l3.2 3.2 5.8-6.4" class="i-check"/>
+        <rect x="50" y="56" width="130" height="12" rx="6" class="i-line"/>
+        <circle cx="30" cy="98" r="10" class="i-brand"/><path d="M25.5 98l3.2 3.2 5.8-6.4" class="i-check"/>
+        <rect x="50" y="92" width="100" height="12" rx="6" class="i-line"/>
+        <circle cx="30" cy="134" r="9" class="i-ring"/>
+        <rect x="50" y="128" width="84" height="12" rx="6" class="i-line"/>
+        <g transform="translate(120 96)">
+          <rect width="212" height="126" rx="14" fill="url(#cg)"/>
+          <circle cx="36" cy="40" r="17" fill="#fff" fill-opacity=".22"/>
+          <circle cx="36" cy="40" r="10" fill="#fff"/>
+          <rect x="66" y="30" width="110" height="10" rx="5" fill="#fff"/>
+          <rect x="66" y="48" width="70" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
+          <rect x="24" y="84" width="164" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+          <rect x="24" y="100" width="100" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+          <path d="M190 10l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#FBBF24"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section" id="internships">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Internships</span>
+        <h2>Our internships</h2>
+        <p class="lede">Choose a track in web, software, data or AI. Every internship is built around real tasks, mentor feedback and a project you can show.</p>
+      </div>
+
+      <div class="programs">
+        <article class="program featured">
+          <span class="badge">Popular</span>
+          <h3>Web Development</h3>
+          <ul><li>Overview</li><li>HTML5 &amp; CSS3</li><li>JavaScript</li><li>Responsive websites</li><li>Web applications</li></ul>
+          <a class="btn btn-light" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+
+        <article class="program corner-green">
+          <h3>Full Stack Development</h3>
+          <ul><li>Overview</li><li>Authentication &amp; authorization</li><li>REST APIs &amp; databases</li><li>Mini project: online store</li><li>Deployment</li></ul>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+
+        <article class="program corner-blue">
+          <h3>Machine Learning</h3>
+          <ul><li>Overview</li><li>Data analysis</li><li>Supervised learning</li><li>Unsupervised learning</li><li>Deep learning</li></ul>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+
+        <article class="program corner-green">
+          <h3>Generative AI</h3>
+          <ul><li>Overview</li><li>Text generation</li><li>Image generation</li><li>Prompt design</li><li>Evaluating models</li></ul>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+
+        <article class="program corner-blue">
+          <h3>Python Development</h3>
+          <ul><li>Overview</li><li>Command-line tools</li><li>Desktop apps</li><li>Web scraping</li><li>Testing</li></ul>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+
+        <article class="program corner-green">
+          <h3>Data Science</h3>
+          <ul><li>Overview</li><li>Data cleaning</li><li>Data visualization</li><li>BI dashboards</li><li>Reporting</li></ul>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdlhdXbLPRKcub4u6-oB4sZ6q3Seg8XNxC40DuJIH1h4wO_4Q/viewform?usp=header" target="_blank" rel="noopener">Apply now</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head left">
+        <span class="kicker">Features</span>
+        <h2>Features of our internships</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
+          <div><h3>Verified certificates</h3><p>Every certificate carries a unique ID that anyone can check on our Verify page.</p></div>
+        </div>
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.2c2.6.2 4.5 2 4.5 5"/></svg></span>
+          <div><h3>Networking</h3><p>Work alongside other interns and mentors, and build contacts that help with placements.</p></div>
+        </div>
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></span>
+          <div><h3>Hands-on experience</h3><p>Each track includes practical tasks and a mini project, not just videos.</p></div>
+        </div>
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><h3>Flexible schedule</h3><p>Work at your own pace with clear weekly milestones to keep you on track.</p></div>
+        </div>
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+          <div><h3>Mentor feedback</h3><p>Submit your tasks and hear what to improve before you move on.</p></div>
+        </div>
+        <div class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><h3>Offer letter</h3><p>Selected interns receive an offer letter confirming their track and duration.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faqs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQs</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>Can I join more than one track at the same time?</summary>
+          <p>Yes, if you can keep up with the tasks in each. We suggest starting with one track and adding another once you have settled in.</p>
+        </details>
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>Are there any fees for the internship?</summary>
+          <p>Fee details for each track are shared with you before you accept an offer, so there are no surprises.</p>
+        </details>
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>When will I receive the offer letter?</summary>
+          <p>Once your application is accepted, the offer letter is emailed to you. If you cannot find it, check your spam folder.</p>
+        </details>
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>How do I submit my tasks?</summary>
+          <p>Your offer email includes a submission link. You can share a code repository or a hosted demo, depending on the task.</p>
+        </details>
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>What are the selection criteria?</summary>
+          <p>We look at your interest in the track, your background, and your willingness to finish tasks on time. You do not need earlier internship experience.</p>
+        </details>
+        <details>
+          <summary><span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>When will I get my certificate?</summary>
+          <p>After you complete the required tasks, we issue your certificate with a unique ID that you can check on the Verify page.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head left">
+          <span class="kicker">Contact us</span>
+          <h2>Questions before you apply? Talk to us.</h2>
+          <p class="lede">Ask about a track, the application process or your certificate, and we will reply by email.</p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <div><b>Our location</b><span>Mumbai, Maharashtra</span></div>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <div><b>How can we help?</b><span>prointernslab@gmail.com</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <h3>Send us a message</h3>
+        <form id="contact-form" action="https://formspree.io/f/mgavjwkj" method="POST">
+          <div class="field"><label for="fullname">Full name*</label><input id="fullname" name="fullname" type="text" placeholder="John Doe" required autocomplete="name"></div>
+          <div class="field"><label for="email">Email*</label><input id="email" name="email" type="email" placeholder="example@yourmail.com" required autocomplete="email"></div>
+          <div class="field"><label for="phone">Phone*</label><input id="phone" name="phone" type="tel" placeholder="XXXXXXXXXX" required autocomplete="tel"></div>
+          <div class="field"><label for="message">Message*</label><textarea id="message" name="message" placeholder="Type your message here" required></textarea></div>
+          <input type="hidden" name="_subject" value="New enquiry via ProInternsLab website">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button class="btn btn-solid" type="submit" id="contact-submit">Send message</button>
+          <p class="form-note" id="contact-note" role="status" hidden></p>
+        </form>
+        <p class="hint" style="margin-top:14px">Prefer email directly? Write to
+          <a id="mail-fallback" href="mailto:prointernslab@gmail.com" target="_blank" rel="noopener" style="color:var(--brand-text);font-weight:600">prointernslab@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= VERIFY VIEW ================= -->
+<main id="verify-view" hidden>
+  <section class="hero hero-short">
+    <div class="hero-inner">
+      <h1>Verify a certificate</h1>
+      <p>Enter the ID printed on a ProInternsLab certificate to confirm who earned it and for which program.</p>
+    </div>
+  </section>
+  <div class="verify-pad">
+    <div class="verify-card">
+      <h2>Enter details</h2>
+      <form id="verify-form" novalidate>
+        <div class="field">
+          <label for="cid">Certificate ID*</label>
+          <input id="cid" type="text" placeholder="PIL-2026-0000" autocomplete="off" autocapitalize="characters" required>
+        </div>
+        <button class="btn btn-solid" type="submit">Get details</button>
+      </form>
+      <div id="verify-result" role="status" aria-live="polite"></div>
+      <p class="hint">Demo: try the ID PIL-2026-0001.</p>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="#home" aria-label="ProInternsLab home">
+        <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
+          <defs>
+            <linearGradient id="pg-f" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#5B21B6"/>
+            </linearGradient>
+          </defs>
+          <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="url(#pg-f)"/>
+          <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="none" stroke="#FBBF24" stroke-width="1.6" opacity=".6"/>
+          <path d="M24 16h11a10 10 0 0 1 0 20h-5v10h-6z M30 21v10h5a5 5 0 0 0 0-10z" fill="#fff"/>
+          <circle cx="46" cy="44" r="7.5" fill="#FBBF24"/>
+          <path d="M46 40.2 47.1 43 50 43.9 47.1 44.9 46 47.8 44.9 44.9 42 43.9 44.9 43z" fill="#5B21B6"/>
+        </svg>
+        <span class="brand-text"><b>ProInternsLab</b><span>INTERNSHIPS</span></span>
+      </a>
+      <p>An internship platform for people who want to learn by building real things.</p>
+    </div>
+    <div>
+      <h4>About us</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+    </div>
+    <!-- Social links skipped for now; re-add a column here when ready -->
+    <div>
+      <h4>Our services</h4>
+      <ul>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#contact">Consulting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Other info</h4>
+      <ul>
+        <li>Mumbai, Maharashtra</li>
+        <li>prointernslab@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <span>&copy; <span id="year">2026</span> ProInternsLab. All rights reserved.</span>
+    <nav aria-label="Legal">
+      <a href="#">Privacy policy</a>
+      <a href="#">Code of conduct</a>
+      <a href="#">Terms &amp; conditions</a>
+      <a href="#">Returns</a>
+    </nav>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+  var menuBtn = $('#menu-btn'), nav = $('#nav'), header = $('.site-header');
+  var homeView = $('#home-view'), verifyView = $('#verify-view');
+  var toTop = $('#to-top');
+
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ----- Menu ----- */
+  function setMenu(open){
+    nav.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.bar')) setMenu(false); });
+
+  /* Placeholder links (social/legal, still "#") go nowhere */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href="#"]');
+    if(a) e.preventDefault();
+  });
+
+  /* ----- Active link ----- */
+  function setActive(id){
+    document.querySelectorAll('[data-nav]').forEach(function(a){
+      if(a.dataset.nav === id) a.setAttribute('aria-current','true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  /* ----- Router: Home page vs Verify page, plus in-page scrolling -----
+     Handled directly on click (rather than relying only on the browser's
+     default hash-jump + hashchange) so it works reliably even when the
+     menu is closing in the same tick, or the hash doesn't change. */
+  function showVerify(){ homeView.hidden = true; verifyView.hidden = false; }
+  function showHome(){ homeView.hidden = false; verifyView.hidden = true; }
+
+  function scrollToSection(id){
+    var target = document.getElementById(id);
+    if(!target) return;
+    var headerH = header.getBoundingClientRect().height;
+    var y = target.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
+    window.scrollTo({top: Math.max(y,0), behavior:'smooth'});
+  }
+
+  function navigateTo(id, opts){
+    opts = opts || {};
+    if(id === 'verify'){
+      showVerify();
+      setActive('verify');
+      if(!opts.silent) window.scrollTo(0,0);
+    } else {
+      showHome();
+      setActive(id || 'home');
+      if(!opts.silent){
+        if(id && id !== 'home') scrollToSection(id);
+        else window.scrollTo({top:0, behavior:'smooth'});
+      }
+    }
+    if(history.replaceState) history.replaceState(null, '', id ? ('#'+id) : '#home');
+  }
+
+  document.querySelectorAll('a[data-nav], .brand').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.dataset.nav || 'home';
+      e.preventDefault();
+      setMenu(false);
+      navigateTo(id);
+    });
+  });
+
+  /* Initial view from the URL's hash, without animating the scroll */
+  navigateTo(decodeURIComponent(location.hash.slice(1)) || 'home', {silent:true});
+  if(!homeView.hidden){
+    var initialId = decodeURIComponent(location.hash.slice(1));
+    if(initialId && initialId !== 'home' && initialId !== 'verify'){
+      var t = document.getElementById(initialId);
+      if(t){
+        var hH = header.getBoundingClientRect().height;
+        window.scrollTo(0, Math.max(t.getBoundingClientRect().top + window.pageYOffset - hH - 8, 0));
+      }
+    }
+  }
+
+  /* Highlight the section in view */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      if(homeView.hidden) return;
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = en.target.id;
+          setActive(id === 'features' ? 'internships' : id);
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    ['home','about','internships','features','faqs','contact'].forEach(function(id){
+      var el = document.getElementById(id); if(el) io.observe(el);
+    });
+  }
+
+  /* ----- Back to top ----- */
+  window.addEventListener('scroll', function(){
+    toTop.classList.toggle('show', window.scrollY > 420);
+  }, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0}); });
+
+  /* ----- Contact form: delivered straight to the inbox via Formspree -----
+     The form POSTs to the Formspree endpoint below; Formspree forwards
+     every submission to the email configured on that endpoint
+     (prointernslab@gmail.com). No mail app opens on the visitor's side. */
+  var form = $('#contact-form'), note = $('#contact-note'), submitBtn = $('#contact-submit');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = $('#fullname').value.trim();
+    var first = name.split(/\s+/)[0] || 'there';
+    var originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending\u2026';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        note.textContent = 'Thanks, ' + first + '. Your message is on its way \u2014 we will reply by email.';
+        note.hidden = false;
+        form.reset();
+      } else {
+        return res.json().then(function(data){
+          var msg = (data && data.errors && data.errors.map(function(x){return x.message;}).join(', ')) || 'Something went wrong. Please try again.';
+          note.textContent = msg;
+          note.hidden = false;
+        });
+      }
+    }).catch(function(){
+      note.innerHTML = 'Could not send right now. Please email us directly at <a href="mailto:prointernslab@gmail.com" style="color:inherit;text-decoration:underline">prointernslab@gmail.com</a>.';
+      note.hidden = false;
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    });
+  });
+
+  /* ----- Certificate verification (demo data: replace with your own records or API) ----- */
+  var CERTS = {
+    'PIL-2026-0001': {name:'Aarav Sharma', program:'Web Development Internship', period:'Jun 2026 to Aug 2026', issued:'Sep 2026'}
+  };
+  var vForm = $('#verify-form'), vOut = $('#verify-result');
+  vForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var id = $('#cid').value.trim().toUpperCase();
+    vOut.textContent = '';
+    var box = document.createElement('div');
+    if(!id){
+      box.className = 'result bad';
+      box.textContent = 'Enter a certificate ID to continue.';
+    } else if(CERTS[id]){
+      var c = CERTS[id];
+      box.className = 'result ok';
+      var h = document.createElement('h3'); h.textContent = 'Certificate found';
+      var dl = document.createElement('dl');
+      [['Name',c.name],['Program',c.program],['Period',c.period],['Issued',c.issued],['ID',id]].forEach(function(r){
+        var dt = document.createElement('dt'); dt.textContent = r[0];
+        var dd = document.createElement('dd'); dd.textContent = r[1];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+      box.appendChild(h); box.appendChild(dl);
+    } else {
+      box.className = 'result bad';
+      box.textContent = 'No certificate found for that ID. Check the ID on your certificate and try again.';
+    }
+    vOut.appendChild(box);
+  });
+})();
+</script>
+</body>
+</html>
